@@ -870,6 +870,12 @@ int CGUIInfoManager::TranslateSingleString(const CStdString &strCondition)
     if (controlID)
       return AddMultiInfo(GUIInfo(bNegate ? -CONTROL_GET_LABEL : CONTROL_GET_LABEL, controlID, 0));
   }
+  else if (strTest.Left(18).Equals("control.getlabel2("))
+  {
+    int controlID = atoi(strTest.Mid(18, strTest.GetLength() - 19).c_str());
+    if (controlID)
+      return AddMultiInfo(GUIInfo(bNegate ? -CONTROL_GET_LABEL2 : CONTROL_GET_LABEL2, controlID, 0));
+  }
   else if (strTest.Left(13).Equals("controlgroup("))
   {
     int groupID = atoi(strTest.Mid(13).c_str());
@@ -2600,6 +2606,16 @@ CStdString CGUIInfoManager::GetMultiInfoLabel(const GUIInfo &info, int contextWi
       const CGUIControl *control = window->GetControl(info.GetData1());
       if (control)
         return control->GetDescription();
+    }
+  }
+  else if (info.m_info == CONTROL_GET_LABEL2)
+  {
+    CGUIWindow *window = GetWindowWithCondition(contextWindow, 0);
+    if (window)
+    {
+      const CGUIControl *control = window->GetControl(info.GetData1());
+      if (control)
+        return control->GetLabel2();
     }
   }
   else if (info.m_info == WINDOW_PROPERTY)
