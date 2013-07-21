@@ -43,6 +43,9 @@ public:
 
   static std::string ChooseArtType(const CFileItem &item, std::map<std::string, std::string> &currentArt);
   static void AddItemPathToFileBrowserSources(VECSOURCES &sources, const CFileItem &item);
+
+  static bool ManageVideoItem(const CFileItem *item);
+  static bool UpdateVideoItemTitle(const CFileItem* pItem);
 protected:
   virtual void OnInitWindow();
   void Update();
