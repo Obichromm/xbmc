@@ -1085,10 +1085,10 @@ bool CGUIWindowVideoNav::OnContextButton(int itemNumber, CONTEXT_BUTTON button)
   {
   case CONTEXT_BUTTON_EDIT:
     {
-      bool ret = CGUIDialogVideoInfo::ManageVideoItem(item.get());
-      if (ret)
+      CONTEXT_BUTTON ret = (CONTEXT_BUTTON)CGUIDialogVideoInfo::ManageVideoItem(item.get());
+      if (ret >= 0)
         Refresh(true);
-      return ret;
+      return true;
     }
 
   case CONTEXT_BUTTON_SET_SEASON_ART:

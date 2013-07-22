@@ -931,14 +931,14 @@ void CGUIDialogVideoInfo::AddItemPathToFileBrowserSources(VECSOURCES &sources, c
   }
 }
 
-bool CGUIDialogVideoInfo::ManageVideoItem(const CFileItem *item)
+int CGUIDialogVideoInfo::ManageVideoItem(const CFileItem *item)
 {
   if (item == NULL || !item->IsVideoDb() || !item->HasVideoInfoTag() || item->GetVideoInfoTag()->m_iDbId < 0)
-    return false;
+    return -1;
 
   CVideoDatabase database;
   if (!database.Open())
-    return false;
+    return -1;
 
   VIDEODB_CONTENT_TYPE type = (VIDEODB_CONTENT_TYPE)item->GetVideoContentType();
   int dbId = item->GetVideoInfoTag()->m_iDbId;
@@ -995,7 +995,10 @@ bool CGUIDialogVideoInfo::ManageVideoItem(const CFileItem *item)
 
   database.Close();
 
-  return result;
+  if (result)
+    return button;
+
+  return -1;
 }
 
 //Add change a title's name
