@@ -936,25 +936,52 @@ bool CGUIDialogVideoInfo::ManageVideoItem(const CFileItem *item)
   if (item == NULL || !item->IsVideoDb() || !item->HasVideoInfoTag() || item->GetVideoInfoTag()->m_iDbId < 0)
     return false;
 
+  CVideoDatabase database;
+  if (!database.Open())
+    return false;
+
+  VIDEODB_CONTENT_TYPE type = (VIDEODB_CONTENT_TYPE)item->GetVideoContentType();
+  int dbId = item->GetVideoInfoTag()->m_iDbId;
+
   CContextButtons buttons;
   buttons.Add(CONTEXT_BUTTON_EDIT, 16105);
 
-  // TODO
-
-  int button = CGUIDialogContextMenu::ShowAndGetChoice(buttons);
-  if (button < 0)
-    return false;
-
-  switch ((CONTEXT_BUTTON)button)
+  if (type == VIDEODB_CONTENT_MOVIES &&
+      database.HasContent(VIDEODB_CONTENT_TVSHOWS))
   {
-    case CONTEXT_BUTTON_EDIT:
-      return UpdateVideoItemTitle(item);
-
-    default:
-      return false;
+    buttons.Add(CONTEXT_BUTTON_LINK_MOVIE, 20384);
+    if (database.IsLinkedToTvshow(dbId))
+      buttons.Add(CONTEXT_BUTTON_UNLINK_MOVIE, 20385);
   }
 
-  return true;
+
+  bool result = false;
+  int button = CGUIDialogContextMenu::ShowAndGetChoice(buttons);
+  if (button >= 0)
+  {
+    switch ((CONTEXT_BUTTON)button)
+    {
+      case CONTEXT_BUTTON_EDIT:
+        result = UpdateVideoItemTitle(item);
+        break;
+
+      case CONTEXT_BUTTON_LINK_MOVIE:
+        result = LinkMovieToTvShow(item, false, database);
+        break;
+
+      case CONTEXT_BUTTON_UNLINK_MOVIE:
+        result = LinkMovieToTvShow(item, true, database);
+        break;
+
+      default:
+        result = false;
+        break;
+    }
+  }
+
+  database.Close();
+
+  return result;
 }
 
 //Add change a title's name
@@ -991,4 +1018,65 @@ bool CGUIDialogVideoInfo::UpdateVideoItemTitle(const CFileItem* pItem)
 
   database.UpdateMovieTitle(iDbId, detail.m_strTitle, iType);
   return true;
+}
+
+bool CGUIDialogVideoInfo::LinkMovieToTvShow(const CFileItem *item, bool bRemove, CVideoDatabase &database)
+{
+  int dbId = item->GetVideoInfoTag()->m_iDbId;
+
+  CFileItemList list;
+  if (bRemove)
+  {
+    vector<int> ids;
+    if (!database.GetLinksToTvShow(dbId, ids))
+      return false;
+
+    for (unsigned int i = 0; i < ids.size(); ++i)
+    {
+      CVideoInfoTag tag;
+      database.GetTvShowInfo("", tag,ids[i]);
+      CFileItemPtr show(new CFileItem(tag));
+      list.Add(show);
+    }
+  }
+  else
+  {
+    database.GetTvShowsNav("videodb://tvshows/titles", list);
+
+    // remove already linked shows
+    vector<int> ids;
+    if (!database.GetLinksToTvShow(dbId, ids))
+      return false;
+
+    for (int i = 0; i < list.Size(); )
+    {
+      size_t j;
+      for (j = 0; j < ids.size(); ++j)
+      {
+        if (list[i]->GetVideoInfoTag()->m_iDbId == ids[j])
+          break;
+      }
+      if (j == ids.size())
+        i++;
+      else
+        list.Remove(i);
+    }
+  }
+
+  int iSelectedLabel = 0;
+  if (list.Size() > 1)
+  {
+    list.Sort(CSettings::Get().GetBool("filelists.ignorethewhensorting") ? SORT_METHOD_LABEL_IGNORE_THE : SORT_METHOD_LABEL, SortOrderAscending);
+    CGUIDialogSelect* pDialog = (CGUIDialogSelect*)g_windowManager.GetWindow(WINDOW_DIALOG_SELECT);
+    pDialog->Reset();
+    pDialog->SetItems(&list);
+    pDialog->SetHeading(20356);
+    pDialog->DoModal();
+    iSelectedLabel = pDialog->GetSelectedLabel();
+  }
+
+  if (iSelectedLabel > -1)
+    return database.LinkMovieToTvshow(dbId, list[iSelectedLabel]->GetVideoInfoTag()->m_iDbId, bRemove);
+
+  return false;
 }
