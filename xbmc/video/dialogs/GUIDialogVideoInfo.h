@@ -48,6 +48,7 @@ public:
 
   static int ManageVideoItem(const CFileItem *item);
   static bool UpdateVideoItemTitle(const CFileItem* pItem);
+  static bool MarkWatched(const CFileItem *item, bool bMark);
   
   static bool GetMoviesForSet(const CFileItem *setItem, CFileItemList &originalMovies, CFileItemList &selectedMovies);
   static bool GetSetForMovie(const CFileItem *movieItem, CFileItemPtr &selectedSet);

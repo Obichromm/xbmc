@@ -646,13 +646,13 @@ bool CGUIWindowMusicNav::OnContextButton(int itemNumber, CONTEXT_BUTTON button)
     }
 
   case CONTEXT_BUTTON_MARK_WATCHED:
-    CGUIWindowVideoBase::MarkWatched(item,true);
+    CGUIDialogVideoInfo::MarkWatched(item.get(), true);
     CUtil::DeleteVideoDatabaseDirectoryCache();
     Refresh();
     return true;
 
   case CONTEXT_BUTTON_MARK_UNWATCHED:
-    CGUIWindowVideoBase::MarkWatched(item,false);
+    CGUIDialogVideoInfo::MarkWatched(item.get(), false);
     CUtil::DeleteVideoDatabaseDirectoryCache();
     Refresh();
     return true;
