@@ -28,6 +28,10 @@
 		<value condition="!IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
 		<value condition="IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Icon]</value>
 	</variable>
+	<variable name="PlayList">
+		<value condition="Player.HasVideo">ActivateWindow(videoplaylist)</value>
+		<value condition="Player.HasAudio">ActivateWindow(musicplaylist)</value>
+	</variable>
 
 	<include name="BehindDialogFadeOut">
 		<control type="image">
@@ -610,7 +614,7 @@
 				<texturenofocus>OSDChannelUPNF.png</texturenofocus>
 				<onleft>50</onleft>
 				<onright>601</onright>
-				<onup>610</onup>
+				<onup>20</onup>
 				<ondown>611</ondown>
 				<onclick>XBMC.PlayerControl(Previous)</onclick>
 			</control>
@@ -624,7 +628,7 @@
 				<texturenofocus>OSDChannelDownNF.png</texturenofocus>
 				<onleft>600</onleft>
 				<onright>603</onright>
-				<onup>610</onup>
+				<onup>20</onup>
 				<ondown>611</ondown>
 				<onclick>XBMC.PlayerControl(Next)</onclick>
 			</control>
@@ -638,7 +642,7 @@
 				<texturenofocus>OSDStopNF.png</texturenofocus>
 				<onleft>601</onleft>
 				<onright>604</onright>
-				<onup>610</onup>
+				<onup>20</onup>
 				<ondown>611</ondown>
 				<onclick>down</onclick>
 				<onclick>XBMC.PlayerControl(Stop)</onclick>
@@ -656,7 +660,7 @@
 				<alttexturenofocus>OSDPlayNF.png</alttexturenofocus>
 				<onleft>603</onleft>
 				<onright>605</onright>
-				<onup>610</onup>
+				<onup>20</onup>
 				<ondown>606</ondown>
 				<onback>50</onback>
 				<onclick>XBMC.PlayerControl(Play)</onclick>
@@ -673,7 +677,7 @@
 				<texturenofocus>OSDRecordOffNF.png</texturenofocus>
 				<onleft>604</onleft>
 				<onright>50</onright>
-				<onup>610</onup>
+				<onup>20</onup>
 				<ondown>611</ondown>
 				<onclick>XBMC.PlayerControl(record)</onclick>
 				<enable>Player.CanRecord</enable>
@@ -697,7 +701,7 @@
 				<texturenofocus>OSDPrevTrackNF.png</texturenofocus>
 				<onleft>50</onleft>
 				<onright>606</onright>
-				<onup>610</onup>
+				<onup>20</onup>
 				<ondown>611</ondown>
 				<onback>50</onback>
 				<onclick>XBMC.PlayerControl(Previous)</onclick>
@@ -712,7 +716,7 @@
 				<texturenofocus>OSDRewindNF.png</texturenofocus>
 				<onleft>600</onleft>
 				<onright>603</onright>
-				<onup>610</onup>
+				<onup>20</onup>
 				<ondown>611</ondown>
 				<onback>50</onback>
 				<onclick>XBMC.PlayerControl(Rewind)</onclick>
@@ -733,7 +737,7 @@
 					<alttexturenofocus>OSDPlayNF.png</alttexturenofocus>
 					<onleft>606</onleft>
 					<onright>601</onright>
-					<onup>610</onup>
+					<onup>20</onup>
 					<ondown>611</ondown>
 					<onback>50</onback>
 					<onclick>XBMC.PlayerControl(Play)</onclick>
@@ -748,7 +752,7 @@
 					<texturenofocus>OSDStopNF.png</texturenofocus>
 					<onleft>603</onleft>
 					<onright>607</onright>
-					<onup>610</onup>
+					<onup>20</onup>
 					<ondown>611</ondown>
 					<onback>50</onback>
 					<onclick>down</onclick>
@@ -764,7 +768,7 @@
 					<texturenofocus>OSDForwardNF.png</texturenofocus>
 					<onleft>601</onleft>
 					<onright>602</onright>
-					<onup>610</onup>
+					<onup>20</onup>
 					<ondown>611</ondown>
 					<onback>50</onback>
 					<onclick>XBMC.PlayerControl(Forward)</onclick>
@@ -780,7 +784,7 @@
 					<texturenofocus>OSDNextTrackNF.png</texturenofocus>
 					<onleft>607</onleft>
 					<onright>604</onright>
-					<onup>610</onup>
+					<onup>20</onup>
 					<ondown>611</ondown>
 					<onback>50</onback>
 					<onclick>XBMC.PlayerControl(Next)</onclick>
@@ -800,7 +804,7 @@
 					<onclick>XBMC.PlayerControl(Repeat)</onclick>
 					<onleft>602</onleft>
 					<onright>605</onright>
-					<onup>610</onup>
+					<onup>20</onup>
 					<ondown>611</ondown>
 					<onback>50</onback>
 				</control>
@@ -872,7 +876,7 @@
 					<onclick>XBMC.PlayerControl(Random)</onclick>
 					<onleft>604</onleft>
 					<onright>50</onright>
-					<onup>610</onup>
+					<onup>20</onup>
 					<ondown>611</ondown>
 					<onback>50</onback>
 				</control>
@@ -888,25 +892,13 @@
 			<visible>Player.HasMedia</visible>
 		</control>
 		<control type="button" id="612">
-			<description>Go to video playlist</description>
+			<description>Go to playlist</description>
 			<include>ButtonCommonValues</include>
 			<label>13350</label>
-			<onclick>ActivateWindow(videoplaylist)</onclick>
+			<onclick>$VAR[PlayList]</onclick>
 			<visible>Player.HasMedia</visible>
 			<visible>!VideoPlayer.Content(LiveTV)</visible>
 			<visible>!Window.IsVisible(MusicPlaylist) + !Window.IsVisible(VideoPlaylist)</visible>
-			<visible>Player.HasVideo</visible>
-		</control>
-		<control type="button" id="613">
-			<description>Go to music playlist</description>
-			<include>ButtonCommonValues</include>
-			<label>13350</label>
-			<onclick>ActivateWindow(musicplaylist)</onclick>
-			<visible>Player.HasMedia</visible>
-			<visible>!VideoPlayer.Content(LiveTV)</visible>
-			<visible>!Window.IsVisible(MusicPlaylist) + !Window.IsVisible(VideoPlaylist)</visible>
-			<visible>Player.HasAudio</visible>
-			<visible>!Player.HasVideo</visible>
 		</control>
 	</include>
 	<include name="ScrollOffsetLabel">
