@@ -158,7 +158,7 @@
 					<selected>system.ismaster</selected>
 					<visible>system.haslocks</visible>
 				</control>
-				<control type="label" id="202">
+				<control type="label" id="203">
 					<width>250</width>
 					<height>35</height>
 					<font>font12</font>
