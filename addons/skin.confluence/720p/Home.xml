@@ -732,38 +732,43 @@
 				<posy>30</posy>
 				<onup>9000</onup>
 				<ondown>9002</ondown>
-	                <animation effect="slide" start="0,0" end="0,40" delay="200" time="200" tween="quadratic" easing="out" condition="!stringcompare(Container(9010).NumItems,0)">Conditional</animation>
-                <control type="image">
-			<posx>130</posx>
-			<posy>0</posy>
-                        <width>35</width>
-                        <height>35</height>
-                        <texture border="0,0,0,3" flipx="true">HomeSubEnd.png</texture>
-	                <visible>!stringcompare(Container(9010).NumItems,0)</visible>
-                </control>
-                <control type="image">
-			<posx>165</posx>
-			<posy>0</posy>
-                        <width>985</width>
-                        <height>35</height>
-                        <texture border="0,0,34,3">HomeSubEnd.png</texture>
-	                <visible>!stringcompare(Container(9010).NumItems,0)</visible>
-                </control>
-				<control type="fixedlist" id="9010">
+				<animation effect="slide" start="0,0" end="0,40" delay="200" time="200" tween="quadratic" easing="out" condition="!stringcompare(Container(9010).NumItems,0)">Conditional</animation>
+				<control type="image">
+					<posx>130</posx>
+					<posy>0</posy>
+					<width>35</width>
+					<height>35</height>
+					<texture border="0,0,0,3" flipx="true">HomeSubEnd.png</texture>
+				</control>
+				<control type="image">
 					<posx>165</posx>
 					<posy>0</posy>
-					<width>949</width>
+					<width>950</width>
+					<height>35</height>
+					<texture border="5">HomeSubNF.png</texture>
+				</control>
+				<control type="image">
+					<posx>1115</posx>
+					<posy>0</posy>
+					<width>35</width>
+					<height>35</height>
+					<texture border="0,0,0,3">HomeSubEnd.png</texture>
+				</control>
+				<control type="list" id="9010">
+					<posx>165</posx>
+					<posy>0</posy>
+					<width>950</width>
 					<height>35</height>
 					<onleft>9010</onleft>
 					<onright>9010</onright>
 					<onup>9000</onup>
 					<ondown>9002</ondown>
 					<pagecontrol>-</pagecontrol>
-					<scrolltime>300</scrolltime>
 					<orientation>Horizontal</orientation>
-				<align>center</align>
-				<focusposition>2</focusposition>
-				<movement>3</movement>
+					<animation effect="slide" start="0,0" end="95,0" condition="stringcompare(Container(9010).NumItems,4)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="190,0" condition="stringcompare(Container(9010).NumItems,3)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="285,0" condition="stringcompare(Container(9010).NumItems,2)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="380,0" condition="stringcompare(Container(9010).NumItems,1)">Conditional</animation>
 					<itemlayout height="35" width="190">
 						<control type="image">
 							<posx>0</posx>
