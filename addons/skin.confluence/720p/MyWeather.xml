@@ -334,38 +334,8 @@
 					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
 				</control>
-				<control type="group">
-					<visible>StringCompare(Weather.Plugin,weather.wunderground) + !IsEmpty(Window.Property(36Hour.IsFetched))</visible>
-					<control type="label">
-						<description>Sunrise Label</description>
-						<left>30</left>
-						<top>570</top>
-						<width>300</width>
-						<height>35</height>
-						<font>font13</font>
-						<align>left</align>
-						<aligny>center</aligny>
-						<label>$LOCALIZE[33027] : [COLOR=white]$INFO[Window.Property(Today.Sunrise)][/COLOR]</label>
-						<textcolor>grey2</textcolor>
-						<shadowcolor>black</shadowcolor>
-					</control>
-					<control type="label">
-						<description>Sunset label</description>
-						<right>470</right>
-						<top>570</top>
-						<width>300</width>
-						<height>35</height>
-						<font>font13</font>
-						<align>right</align>
-						<aligny>center</aligny>
-						<label>$LOCALIZE[33028] : [COLOR=white]$INFO[Window.Property(Today.Sunset)][/COLOR]</label>
-						<textcolor>grey2</textcolor>
-						<shadowcolor>black</shadowcolor>
-					</control>
-				</control>
 			</control>
 			<control type="group">
-				<visible>!StringCompare(Weather.Plugin,weather.wunderground)</visible>
 				<left>580</left>
 				<top>40</top>
 				<control type="image">
@@ -693,40 +663,6 @@
 					<label>([COLOR=blue]$INFO[Container(50).NumItems][/COLOR]) $LOCALIZE[12393] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(50).CurrentPage]/$INFO[Container(50).NumPages][/COLOR])</label>
 				</control>
 			</control>
-			<control type="group">
-				<visible>StringCompare(Weather.Plugin,weather.wunderground)</visible>
-				<left>580</left>
-				<top>40</top>
-				<control type="image">
-					<left>0</left>
-					<top>0</top>
-					<width>650</width>
-					<height>620</height>
-					<texture border="20">ContentPanel.png</texture>
-				</control>
-				<control type="image">
-					<left>0</left>
-					<top>612</top>
-					<width>650</width>
-					<height>64</height>
-					<texture border="10">ContentPanelMirror.png</texture>
-				</control>
-				<control type="image">
-					<left>20</left>
-					<top>5</top>
-					<width>610</width>
-					<height>90</height>
-					<aspectratio>stretch</aspectratio>
-					<texture>GlassTitleBar.png</texture>
-				</control>
-				<control type="group" id="50">
-					<include condition="StringCompare(Weather.Plugin,weather.wunderground)">Weather10DayForcast</include>
-					<include condition="StringCompare(Weather.Plugin,weather.wunderground)">Weather36HourForcast</include>
-					<include condition="StringCompare(Weather.Plugin,weather.wunderground)">WeatherWeekendForcast</include>
-					<include condition="StringCompare(Weather.Plugin,weather.wunderground)">WeatherHourlyForcast</include>
-					<include condition="StringCompare(Weather.Plugin,weather.wunderground)">WeatherMapAlerts</include>
-				</control>
-			</control>
 		</control>
 		<include>CommonNowPlaying</include>
 		<include>MainWindowMouseButtons</include>
@@ -779,46 +715,6 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-				</control>
-				<control type="button" id="302">
-					<description>10 day forcast button</description>
-					<textwidth>235</textwidth>
-					<include>ButtonCommonValues</include>
-					<label>31904</label>
-					<onfocus>ClearProperty(Weather.CurrentView)</onfocus>
-					<visible>StringCompare(Weather.Plugin,weather.wunderground)</visible>
-				</control>
-				<control type="button" id="303">
-					<description>36 hour forcast button</description>
-					<textwidth>235</textwidth>
-					<include>ButtonCommonValues</include>
-					<label>31901</label>
-					<onfocus>SetProperty(Weather.CurrentView,36hour)</onfocus>
-					<visible>StringCompare(Weather.Plugin,weather.wunderground)</visible>
-				</control>
-				<control type="button" id="304">
-					<description>Weekend forcast button</description>
-					<textwidth>235</textwidth>
-					<include>ButtonCommonValues</include>
-					<label>31903</label>
-					<onfocus>SetProperty(Weather.CurrentView,weekend)</onfocus>
-					<visible>StringCompare(Weather.Plugin,weather.wunderground)</visible>
-				</control>
-				<control type="button" id="305">
-					<description>Hourly forcast button</description>
-					<textwidth>235</textwidth>
-					<include>ButtonCommonValues</include>
-					<label>31902</label>
-					<onfocus>SetProperty(Weather.CurrentView,hourly)</onfocus>
-					<visible>StringCompare(Weather.Plugin,weather.wunderground)</visible>
-				</control>
-				<control type="button" id="306">
-					<description>Hourly forcast button</description>
-					<textwidth>235</textwidth>
-					<include>ButtonCommonValues</include>
-					<label>31910</label>
-					<onfocus>SetProperty(Weather.CurrentView,map)</onfocus>
-					<visible>StringCompare(Weather.Plugin,weather.wunderground)</visible>
 				</control>
 				<control type="label" id="201">
 					<width>250</width>
