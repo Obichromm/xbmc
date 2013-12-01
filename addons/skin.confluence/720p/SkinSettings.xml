@@ -665,41 +665,6 @@
 						<onright>61</onright>
 						<onup>9004</onup>
 						<ondown>9004</ondown>
-						<control type="label" id="453">
-							<width>750</width>
-							<height>45</height>
-							<font>font13_title</font>
-							<label>31140</label>
-							<textcolor>blue</textcolor>
-							<shadowcolor>black</shadowcolor>
-							<align>left</align>
-							<aligny>center</aligny>
-						</control>
-						<control type="button" id="455">
-							<width>750</width>
-							<height>40</height>
-							<font>font13</font>
-							<label>$LOCALIZE[31132]</label>
-							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(LyricScript_Path))][/COLOR]</label2>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>Skin.SetAddon(LyricScript_Path,xbmc.python.lyrics)</onclick>
-						</control>
-						<control type="button" id="456">
-							<width>750</width>
-							<height>40</height>
-							<font>font13</font>
-							<label>- $LOCALIZE[24020]</label>
-							<textcolor>grey2</textcolor>
-							<focusedcolor>white</focusedcolor>
-							<texturefocus>MenuItemFO.png</texturefocus>
-							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<enable>!IsEmpty(Skin.String(LyricScript_Path))</enable>
-							<onclick>Addon.OpenSettings($INFO[Skin.String(LyricScript_Path)])</onclick>
-						</control> 
-
 						<control type="label" id="410">
 							<width>750</width>
 							<height>45</height>

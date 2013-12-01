@@ -260,23 +260,13 @@ msgctxt "#31125"
 msgid "Show Background \"Now Playing\" Visualisation"
 msgstr ""
 
-#empty strings from id 31126 to 31127
-
-msgctxt "#31128"
-msgid "Lyrics"
-msgstr ""
+#empty strings from id 31126 to 31128
 
 msgctxt "#31129"
 msgid "Hide Fanart in full screen visualisation"
 msgstr ""
 
-#empty strings from id 31130 to 31131
-
-msgctxt "#31132"
-msgid "Lyrics Add-on"
-msgstr ""
-
-#empty string with id 31133
+#empty strings from id 31130 to 31133
 
 msgctxt "#31134"
 msgid "Home Page Videos Sub-menu"
@@ -290,11 +280,7 @@ msgctxt "#31136"
 msgid "Home Page Pictures Sub-menu"
 msgstr ""
 
-#empty strings from id 31137 to 31139
-
-msgctxt "#31140"
-msgid "Music OSD"
-msgstr ""
+#empty strings from id 31137 to 31140
 
 msgctxt "#31141"
 msgid "Video OSD"
@@ -311,25 +297,7 @@ msgctxt "#31200"
 msgid "Shortcuts"
 msgstr ""
 
-#empty strings from id 31201 to 31202
-
-msgctxt "#31203"
-msgid "Choose Your Song"
-msgstr ""
-
-#empty string with id 31204
-
-msgctxt "#31205"
-msgid "Lyrics Source"
-msgstr ""
-
-msgctxt "#31206"
-msgid "Found"
-msgstr ""
-
-msgctxt "#31207"
-msgid "Find More Items"
-msgstr ""
+#empty strings from id 31201 to 31207
 
 msgctxt "#31208"
 msgid "Upcoming Episodes"
