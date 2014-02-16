@@ -19,26 +19,37 @@
 				<height>70</height>
 				<texture border="20">OverlayDialogBackground.png</texture>
 			</control>
-			<control type="image">
-				<description>Busy animation</description>
-				<left>20</left>
-				<top>20</top>
-				<width>32</width>
-				<height>32</height>
-				<texture>busy.png</texture>
-				<aspectratio>keep</aspectratio>
-				<animation effect="rotate" start="0" end="360" center="36,36" time="1200" loop="true" condition="true">conditional</animation>
-			</control>
 			<control type="label">
 				<description>Busy label</description>
-				<left>60</left>
-				<top>20</top>
+				<left>40</left>
+				<top>10</top>
 				<width>120</width>
 				<height>32</height>
-				<align>left</align>
+				<align>center</align>
 				<aligny>center</aligny>
 				<label>$LOCALIZE[31004]</label>
 				<font>font12</font>
+			</control>
+			<control type="image">
+				<left>65</left>
+				<top>42</top>
+				<width>70</width>
+				<height>10</height>
+				<texture>dot-off.png</texture>
+			</control>
+			<control type="image">
+				<left>65</left>
+				<top>42</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>dot-on.png</texture>
+				<animation type="Conditional" condition="true" pulse="true">
+					<effect type="slide" start="0,0" end="0,0" time="0"/>
+					<effect type="slide" start="0,0" end="20,0" time="0" delay="500"/>
+					<effect type="slide" start="0,0" end="20,0" time="0" delay="1500"/>
+					<effect type="slide" start="0,0" end="20,0" time="0" delay="2500"/>
+					<effect type="slide" start="0,0" end="0,0" time="0" delay="3000"/>
+				</animation>
 			</control>
 			<control type="progress" id="10">
 				<description>Progressbar</description>
