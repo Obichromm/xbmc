@@ -81,11 +81,6 @@
 			<filename>Roboto-Bold.ttf</filename>
 			<size>40</size>
 		</font>
-		<font>
-			<name>WeatherTemp</name>
-			<filename>Roboto-Bold.ttf</filename>
-			<size>80</size>
-		</font>
 	</fontset>
 
 	<fontset id="DefaultNoCaps" idloc="31391" unicode="true"> 
@@ -168,11 +163,6 @@
 			<name>font_MainMenu</name>
 			<filename>Roboto-Bold.ttf</filename>
 			<size>40</size>
-		</font>
-		<font>
-			<name>WeatherTemp</name>
-			<filename>Roboto-Bold.ttf</filename>
-			<size>80</size>
 		</font>
 	</fontset>
 
@@ -263,12 +253,6 @@
 			<name>font_MainMenu</name>
 			<filename>arial.ttf</filename>
 			<size>35</size>
-			<style>bold</style>
-		</font>
-		<font>
-			<name>WeatherTemp</name>
-			<filename>arial.ttf</filename>
-			<size>80</size>
 			<style>bold</style>
 		</font>
 	</fontset>

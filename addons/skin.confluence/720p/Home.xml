@@ -892,10 +892,10 @@
 				<content>
 					<item id="7">
 						<label>31950</label>
-						<onclick>ActivateWindow(Weather)</onclick>
+						<onclick>RunAddon($INFO[Weather.Service],gui=true)</onclick>
 						<icon>-</icon>
 						<thumb>-</thumb>
-						<visible>!Skin.HasSetting(HomeMenuNoWeatherButton) + !IsEmpty(Weather.Plugin)</visible>
+						<visible>!Skin.HasSetting(HomeMenuNoWeatherButton) + !IsEmpty(Weather.Service)</visible>
 					</item>
 					<item id="4">
 						<label>31951</label>
@@ -1114,7 +1114,7 @@
 		<control type="group">
 			<left>20</left>
 			<top>0</top>
-			<visible>Skin.HasSetting(homepageWeatherinfo) + !IsEmpty(Weather.Plugin)</visible>
+			<visible>Skin.HasSetting(homepageWeatherinfo) + !IsEmpty(Weather.Service)</visible>
 			<include>Window_OpenClose_Animation</include>
 			<control type="image">
 				<description>Weather image</description>
@@ -1123,7 +1123,7 @@
 				<width>60</width>
 				<height>60</height>
 				<aspectratio>keep</aspectratio>
-				<texture>$INFO[Weather.Conditions]</texture>
+				<texture>$INFO[Window(Home).Property(Current.ConditionIcon)]</texture>
 			</control>
 			<control type="label">
 				<description>Location label</description>
@@ -1136,7 +1136,7 @@
 				<font>font10</font>
 				<textcolor>white</textcolor>
 				<shadowcolor>black</shadowcolor>
-				<label>$INFO[Window(Weather).Property(Location)]</label>
+				<label>$INFO[Window(Home).Property(Location)]</label>
 			</control>
 			<control type="grouplist">
 				<left>65</left>
@@ -1155,7 +1155,7 @@
 					<font>font28_title</font>
 					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
-					<label>[B]$INFO[Window(Weather).Property(Current.Temperature)][/B]</label>
+					<label>[B]$INFO[Window(Home).Property(Current.Temperature)][/B]</label>
 				</control>
 				<control type="label">
 					<description>Temp Units</description>
@@ -1166,7 +1166,7 @@
 					<label>$INFO[System.TemperatureUnits]</label>
 					<textcolor>white</textcolor>
 					<shadowcolor>black</shadowcolor>
-					<visible>!IsEmpty(Window(Weather).Property(Current.Temperature))</visible>
+					<visible>!IsEmpty(Window(Home).Property(Current.Temperature))</visible>
 				</control>
 				<control type="label">
 					<description>Conditions Label</description>
@@ -1174,7 +1174,7 @@
 					<height>22</height>
 					<font>font10</font>
 					<aligny>center</aligny>
-					<label>$INFO[Window(Weather).Property(Current.Condition),  ]</label>
+					<label>$INFO[Window(Home).Property(Current.Condition),  ]</label>
 					<textcolor>grey2</textcolor>
 					<shadowcolor>black</shadowcolor>
 				</control>

@@ -421,7 +421,7 @@
 						<selected>Skin.HasSetting(homepageWeatherinfo)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<visible>!IsEmpty(Weather.Plugin)</visible>
+						<enable>!IsEmpty(Weather.Service)</enable>
 					</control>
 					<control type="radiobutton" id="205">
 						<description>Show Recently added Video info</description>
@@ -549,6 +549,7 @@
 						<label>$LOCALIZE[31111] - $LOCALIZE[8]</label>
 						<onclick>Skin.ToggleSetting(HomeMenuNoWeatherButton)</onclick>
 						<selected>Skin.HasSetting(HomeMenuNoWeatherButton)</selected>
+						<enable>!IsEmpty(Weather.Service)</enable>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
