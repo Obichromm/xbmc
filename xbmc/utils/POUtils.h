@@ -72,10 +72,9 @@ public:
     * to be as fast as possible this does not even get the id number
     * just the type of the entry found. GetEntryID() has to be called
     * for getting the id. After that ParseEntry() needs a call for
-    * actually getting the msg strings. The reason for this is to
-    * have calls and checks as fast as possible generally and specially
-    * for parsing weather tokens and to parse only the needed strings from
-    * the fallback language (missing from the gui language translation)
+    * actually getting the msg strings. The reason for this is to have calls 
+    * and checks as fast as possible generally and to parse only the needed 
+    * strings from the fallback language (missing from the gui language translation)
     \return true if there was an entry found, false if reached the end of buffer
     */
   bool GetNextEntry();

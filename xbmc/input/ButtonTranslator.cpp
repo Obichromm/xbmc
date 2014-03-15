@@ -372,7 +372,6 @@ static const ActionMapping windows[] =
         {"slideshow"                , WINDOW_SLIDESHOW},
         {"filestackingdialog"       , WINDOW_DIALOG_FILESTACKING},
         {"karaoke"                  , WINDOW_KARAOKELYRICS},
-        {"weather"                  , WINDOW_WEATHER},
         {"screensaver"              , WINDOW_SCREENSAVER},
         {"videoosd"                 , WINDOW_DIALOG_VIDEO_OSD},
         {"videomenu"                , WINDOW_VIDEO_MENU},

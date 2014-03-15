@@ -33,7 +33,6 @@
 #include "utils/log.h"
 #include "utils/LangCodeExpander.h"
 #include "utils/StringUtils.h"
-#include "utils/Weather.h"
 #include "utils/XBMCTinyXML.h"
 
 using namespace std;
@@ -227,7 +226,6 @@ void CLangInfo::OnSettingChanged(const CSetting *setting)
   else if (settingId == "locale.country")
   {
     g_langInfo.SetCurrentRegion(((CSettingString*)setting)->GetValue());
-    g_weatherManager.Refresh(); // need to reset our weather, as temperatures need re-translating.
   }
 }
 
@@ -459,8 +457,7 @@ bool CLangInfo::SetLanguage(const std::string &strLanguage)
   if (!g_localizeStrings.Load("special://xbmc/language/", strLanguage))
     return false;
 
-  // also tell our weather and skin to reload as these are localized
-  g_weatherManager.Refresh();
+  // also tell our skin to reload as it is localized
   g_PVRManager.LocalizationChanged();
   g_application.ReloadSkin();
 

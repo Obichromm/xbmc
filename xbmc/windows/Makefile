@@ -8,7 +8,6 @@ SRCS=GUIMediaWindow.cpp \
      GUIWindowScreensaverDim.cpp \
      GUIWindowStartup.cpp \
      GUIWindowSystemInfo.cpp \
-     GUIWindowWeather.cpp \
 
 LIB=windows.a
 

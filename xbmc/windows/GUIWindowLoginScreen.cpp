@@ -32,7 +32,6 @@
 #include "interfaces/json-rpc/JSONRPC.h"
 #endif
 #include "interfaces/Builtins.h"
-#include "utils/Weather.h"
 #include "utils/StringUtils.h"
 #include "network/Network.h"
 #include "addons/Skin.h"
@@ -305,7 +304,6 @@ void CGUIWindowLoginScreen::LoadProfile(unsigned int profile)
   // reload the add-ons, or we will first load all add-ons from the master account without checking disabled status
   ADDON::CAddonMgr::Get().ReInit();
 
-  g_weatherManager.Refresh();
   g_application.SetLoggingIn(true);
 
 #ifdef HAS_JSONRPC

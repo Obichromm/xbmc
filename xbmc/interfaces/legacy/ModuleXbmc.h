@@ -202,7 +202,7 @@ namespace XBMCAddon
      * List of InfoTags - http://wiki.xbmc.org/?title=InfoLabels 
      * 
      * example:
-     *   - label = xbmc.getInfoLabel('Weather.Conditions')
+     *   - label = xbmc.getInfoLabel('ListItem.Genre')
      */
     String getInfoLabel(const char* cLine);
 
@@ -215,7 +215,7 @@ namespace XBMCAddon
      * List of InfoTags - http://wiki.xbmc.org/?title=InfoLabels 
      * 
      * example:
-     *   - filename = xbmc.getInfoImage('Weather.Conditions')
+     *   - filename = xbmc.getInfoImage('ListItem.Icon')
      */
     String getInfoImage(const char * infotag);
 

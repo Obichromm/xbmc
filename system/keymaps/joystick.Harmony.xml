@@ -87,7 +87,6 @@
       <!-- F1		-->      <button id="53">XBMC.ActivateWindow(Music)</button>
       <!-- F3		-->      <button id="55">XBMC.ActivateWindow(videolibrary,tvshowtitles,return)</button>
       <!-- F2		-->      <button id="54">XBMC.ActivateWindow(videolibrary,movietitles,return)</button>
-      <!-- F4		-->      <button id="56">XBMC.ActivateWindow(Weather)</button>
       <!-- F5			-->  <button id="93">OSD</button>
       <!-- F7			-->  <button id="95">XBMC.ActivateWindow(Home)</button>
       <!-- F6			-->  <button id="94">XBMC.ActivateWindow(Scripts)</button>

@@ -112,11 +112,6 @@ namespace INFO
 #define PLAYER_ISINTERNETSTREAM      54
 #define PLAYER_FILENAME              55
 
-#define WEATHER_CONDITIONS          100
-#define WEATHER_TEMPERATURE         101
-#define WEATHER_LOCATION            102
-#define WEATHER_IS_FETCHED          103
-#define WEATHER_FANART_CODE         104
 #define WEATHER_PLUGIN              105
 
 #define SYSTEM_TEMPERATURE_UNITS    106

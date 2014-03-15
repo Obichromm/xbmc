@@ -1664,7 +1664,6 @@
     <ClCompile Include="..\..\xbmc\utils\URIUtils.cpp" />
     <ClCompile Include="..\..\xbmc\utils\UrlOptions.cpp" />
     <ClCompile Include="..\..\xbmc\utils\Variant.cpp" />
-    <ClCompile Include="..\..\xbmc\utils\Weather.cpp" />
     <ClCompile Include="..\..\xbmc\utils\Environment.cpp" />
     <ClCompile Include="..\..\xbmc\utils\XBMCTinyXML.cpp" />
     <ClCompile Include="..\..\xbmc\utils\XMLUtils.cpp" />
@@ -1934,7 +1933,6 @@
     <ClCompile Include="..\..\xbmc\windows\GUIWindowScreensaverDim.cpp" />
     <ClCompile Include="..\..\xbmc\windows\GUIWindowStartup.cpp" />
     <ClCompile Include="..\..\xbmc\windows\GUIWindowSystemInfo.cpp" />
-    <ClCompile Include="..\..\xbmc\windows\GUIWindowWeather.cpp" />
     <ClCompile Include="..\..\xbmc\XBApplicationEx.cpp" />
     <ClCompile Include="..\..\xbmc\XBDateTime.cpp" />
     <ClCompile Include="..\..\xbmc\xbmc.cpp">
@@ -2451,7 +2449,6 @@
     <ClInclude Include="..\..\xbmc\utils\URIUtils.h" />
     <ClInclude Include="..\..\xbmc\utils\UrlOptions.h" />
     <ClInclude Include="..\..\xbmc\utils\Variant.h" />
-    <ClInclude Include="..\..\xbmc\utils\Weather.h" />
     <ClInclude Include="..\..\xbmc\utils\Environment.h" />
     <ClInclude Include="..\..\xbmc\utils\XBMCTinyXML.h" />
     <ClInclude Include="..\..\xbmc\utils\XMLUtils.h" />
@@ -2740,7 +2737,6 @@
     <ClInclude Include="..\..\xbmc\windows\GUIWindowScreensaverDim.h" />
     <ClInclude Include="..\..\xbmc\windows\GUIWindowStartup.h" />
     <ClInclude Include="..\..\xbmc\windows\GUIWindowSystemInfo.h" />
-    <ClInclude Include="..\..\xbmc\windows\GUIWindowWeather.h" />
     <ClInclude Include="..\..\xbmc\XBApplicationEx.h" />
   </ItemGroup>
   <ItemGroup>

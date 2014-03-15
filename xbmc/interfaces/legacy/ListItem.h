@@ -351,7 +351,7 @@ namespace XBMCAddon
        * *Note, You can use the above as keywords for arguments.\n
        * 
        * example:
-       *   - self.list.getSelectedItem().setPath(path='ActivateWindow(Weather)')
+       *   - self.list.getSelectedItem().setPath(path='ActivateWindow(Settings)')
        */
       void setPath(const String& path);
 

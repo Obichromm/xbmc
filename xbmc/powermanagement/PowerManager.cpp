@@ -27,7 +27,6 @@
 #include "settings/Settings.h"
 #include "windowing/WindowingFactory.h"
 #include "utils/log.h"
-#include "utils/Weather.h"
 #include "interfaces/Builtins.h"
 #include "interfaces/AnnouncementManager.h"
 #include "guilib/LocalizeStrings.h"
@@ -286,7 +285,6 @@ void CPowerManager::OnWake()
 
   CAEFactory::Resume();
   g_application.UpdateLibraries();
-  g_weatherManager.Refresh();
 
   CAnnouncementManager::Announce(System, "xbmc", "OnWake");
 }

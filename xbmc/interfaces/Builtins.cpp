@@ -211,10 +211,6 @@ const BUILT_IN commands[] = {
   { "CECToggleState",             false,  "Toggle state of playing device via a CEC peripheral"},
   { "CECActivateSource",          false,  "Wake up playing device via a CEC peripheral"},
   { "CECStandby",                 false,  "Put playing device on standby via a CEC peripheral"},
-  { "Weather.Refresh",            false,  "Force weather data refresh"},
-  { "Weather.LocationNext",       false,  "Switch to next weather location"},
-  { "Weather.LocationPrevious",   false,  "Switch to previous weather location"},
-  { "Weather.LocationSet",        true,   "Switch to given weather location (parameter can be 1-3)"},
 #if defined(HAS_LIRC) || defined(HAS_IRSERVERSUITE)
   { "LIRC.Stop",                  false,  "Removes XBMC as LIRC client" },
   { "LIRC.Start",                 false,  "Adds XBMC as LIRC client" },
@@ -1702,27 +1698,6 @@ int CBuiltins::Execute(const CStdString& execString)
     g_RemoteControl.AddSendCommand(command);
   }
 #endif
-  else if (execute.Equals("weather.locationset"))
-  {
-    int loc = atoi(params[0]);
-    CGUIMessage msg(GUI_MSG_ITEM_SELECT, 0, 0, loc);
-    g_windowManager.SendMessage(msg, WINDOW_WEATHER);
-  }
-  else if (execute.Equals("weather.locationnext"))
-  {
-    CGUIMessage msg(GUI_MSG_MOVE_OFFSET, 0, 0, 1);
-    g_windowManager.SendMessage(msg, WINDOW_WEATHER);
-  }
-  else if (execute.Equals("weather.locationprevious"))
-  {
-    CGUIMessage msg(GUI_MSG_MOVE_OFFSET, 0, 0, -1);
-    g_windowManager.SendMessage(msg, WINDOW_WEATHER);
-  }
-  else if (execute.Equals("weather.refresh"))
-  {
-    CGUIMessage msg(GUI_MSG_MOVE_OFFSET, 0, 0, 0);
-    g_windowManager.SendMessage(msg, WINDOW_WEATHER);
-  }
   else if (execute.Equals("videolibrary.search"))
   {
     CGUIMessage msg(GUI_MSG_SEARCH, 0, 0, 0);

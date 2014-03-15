@@ -190,7 +190,6 @@
 #include "settings/windows/GUIWindowSettingsScreenCalibration.h"
 #include "programs/GUIWindowPrograms.h"
 #include "pictures/GUIWindowPictures.h"
-#include "windows/GUIWindowWeather.h"
 #include "windows/GUIWindowLoginScreen.h"
 #include "addons/GUIWindowAddonBrowser.h"
 #include "music/windows/GUIWindowVisualisation.h"
@@ -314,7 +313,6 @@
 #include "utils/AlarmClock.h"
 #include "utils/RssReader.h"
 #include "utils/StringUtils.h"
-#include "utils/Weather.h"
 #include "DatabaseManager.h"
 
 #ifdef TARGET_POSIX
@@ -1434,7 +1432,6 @@ bool CApplication::Initialize()
     g_windowManager.Add(new CGUIDialogMusicOverlay);
     g_windowManager.Add(new CGUIDialogVideoOverlay);
     g_windowManager.Add(new CGUIWindowScreensaver);
-    g_windowManager.Add(new CGUIWindowWeather);
     g_windowManager.Add(new CGUIWindowStartup);
 
     /* window id's 3000 - 3100 are reserved for python */
@@ -3418,7 +3415,6 @@ bool CApplication::Cleanup()
     g_windowManager.Delete(WINDOW_HOME);
     g_windowManager.Delete(WINDOW_PROGRAMS);
     g_windowManager.Delete(WINDOW_PICTURES);
-    g_windowManager.Delete(WINDOW_WEATHER);
 
     g_windowManager.Delete(WINDOW_SETTINGS_MYPICTURES);
     g_windowManager.Remove(WINDOW_SETTINGS_MYPROGRAMS);
@@ -5831,8 +5827,7 @@ bool CApplication::SetLanguage(const CStdString &strLanguage)
     if (!g_localizeStrings.Load("special://xbmc/language/", strNewLanguage))
       return false;
 
-    // also tell our weather and skin to reload as these are localized
-    g_weatherManager.Refresh();
+    // also tell our skin to reload as it is localized
     g_PVRManager.LocalizationChanged();
     ReloadSkin();
   }

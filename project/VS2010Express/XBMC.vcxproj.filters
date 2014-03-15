@@ -1558,9 +1558,6 @@
     <ClCompile Include="..\..\xbmc\utils\Variant.cpp">
       <Filter>utils</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\xbmc\utils\Weather.cpp">
-      <Filter>utils</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\xbmc\utils\XMLUtils.cpp">
       <Filter>utils</Filter>
     </ClCompile>
@@ -1685,9 +1682,6 @@
       <Filter>windows</Filter>
     </ClCompile>
     <ClCompile Include="..\..\xbmc\windows\GUIWindowSystemInfo.cpp">
-      <Filter>windows</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\xbmc\windows\GUIWindowWeather.cpp">
       <Filter>windows</Filter>
     </ClCompile>
     <ClCompile Include="..\..\xbmc\utils\LangCodeExpander.cpp">
@@ -4587,9 +4581,6 @@
     <ClInclude Include="..\..\xbmc\utils\Variant.h">
       <Filter>utils</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\xbmc\utils\Weather.h">
-      <Filter>utils</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\xbmc\utils\XMLUtils.h">
       <Filter>utils</Filter>
     </ClInclude>
@@ -4732,9 +4723,6 @@
       <Filter>windows</Filter>
     </ClInclude>
     <ClInclude Include="..\..\xbmc\windows\GUIWindowSystemInfo.h">
-      <Filter>windows</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\xbmc\windows\GUIWindowWeather.h">
       <Filter>windows</Filter>
     </ClInclude>
     <ClInclude Include="..\..\xbmc\utils\LangCodeExpander.h">

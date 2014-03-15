@@ -92,7 +92,6 @@
   <Home>
     <remote>
       <info>XBMC.ActivateWindow(SystemInfo)</info>
-      <clear>XBMC.ActivateWindow(Weather)</clear>
       <hash>XBMC.ActivateWindow(Settings)</hash>
     </remote>
   </Home>
@@ -358,11 +357,6 @@
       <back>BackSpace</back>
     </remote>
   </NumericInput>
-  <Weather>
-    <remote>
-      <back>PreviousMenu</back>
-    </remote>
-  </Weather>
   <TV>
     <remote>
       <red>Red</red>
@@ -406,9 +400,9 @@
     </remote>
   </MyProgramsSettings>
   <MyWeatherSettings>
-    <remote>
+   <remote>
       <back>PreviousMenu</back>
-    </remote>
+   </remote>
   </MyWeatherSettings>
   <MyMusicSettings>
     <remote>

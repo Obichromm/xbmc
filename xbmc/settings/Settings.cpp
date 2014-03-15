@@ -79,7 +79,6 @@
 #include "utils/RssManager.h"
 #include "utils/StringUtils.h"
 #include "utils/SystemInfo.h"
-#include "utils/Weather.h"
 #include "utils/XBMCTinyXML.h"
 #include "view/ViewStateSettings.h"
 #include "windowing/WindowingFactory.h"
@@ -440,7 +439,6 @@ void CSettings::Uninitialize()
 #if defined(TARGET_LINUX)
   m_settingsManager->UnregisterCallback(&g_timezone);
 #endif // defined(TARGET_LINUX)
-  m_settingsManager->UnregisterCallback(&g_weatherManager);
   m_settingsManager->UnregisterCallback(&PERIPHERALS::CPeripherals::Get());
 #if defined(TARGET_DARWIN_OSX)
   m_settingsManager->UnregisterCallback(&XBMCHelper::GetInstance());

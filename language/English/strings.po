@@ -234,7 +234,7 @@ msgid "Dec"
 msgstr ""
 
 #empty strings from id 63 to 70
-#strings from 71 to 97 are reserved for weather translation
+#strings from 71 to 97 are reserved for weather add-ons
 
 #. Weather token
 msgctxt "#71"
@@ -347,7 +347,7 @@ msgid "Variable"
 msgstr ""
 
 #empty strings from id 93 to 97
-#strings through to 97 reserved for weather translation
+#strings through to 97 reserved for weather add-ons
 
 msgctxt "#98"
 msgid "View: Auto"
@@ -1545,7 +1545,7 @@ msgctxt "#369"
 msgid "Title"
 msgstr ""
 
-#strings from 370 to 395 are reserved for weather translation
+#strings from 370 to 412 are reserved for weather add-ons
 
 #. Weather token
 msgctxt "#370"
@@ -1693,37 +1693,30 @@ msgctxt "#399"
 msgid "Speed units"
 msgstr ""
 
-#: xbmc/windows/GUIWindowWeather.cpp
 msgctxt "#400"
 msgid "Weather"
 msgstr ""
 
-#: xbmc/windows/GUIWindowWeather.cpp
 msgctxt "#401"
 msgid "Temp"
 msgstr ""
 
-#: xbmc/windows/GUIWindowWeather.cpp
 msgctxt "#402"
 msgid "Feels like"
 msgstr ""
 
-#: xbmc/windows/GUIWindowWeather.cpp
 msgctxt "#403"
 msgid "UV index"
 msgstr ""
 
-#: xbmc/windows/GUIWindowWeather.cpp
 msgctxt "#404"
 msgid "Wind"
 msgstr ""
 
-#: xbmc/windows/GUIWindowWeather.cpp
 msgctxt "#405"
 msgid "Dew point"
 msgstr ""
 
-#: xbmc/windows/GUIWindowWeather.cpp
 msgctxt "#406"
 msgid "Humidity"
 msgstr ""
@@ -3716,7 +3709,7 @@ msgid "Custom passthrough device"
 msgstr ""
 
 #empty strings from id 1302 to 1395
-#strings from 1396 to 1449 are reserved for weather translation
+#strings from 1396 to 1449 are reserved for weather add-ons
 
 #. Weather token
 msgctxt "#1396"
@@ -3988,7 +3981,7 @@ msgctxt "#1449"
 msgid "Partial"
 msgstr ""
 
-#strings through to 1449 reserved for weather translation
+#strings through to 1449 reserved for weather add-ons
 
 #: system/settings/settings.xml
 msgctxt "#1450"
@@ -4095,10 +4088,7 @@ msgctxt "#10013"
 msgid "Settings - Programs"
 msgstr ""
 
-#: xbmc/guilib/WindowIDs.h
-msgctxt "#10014"
-msgid "Settings - Weather"
-msgstr ""
+#empty string with id 10014
 
 #: xbmc/guilib/WindowIDs.h
 msgctxt "#10015"
@@ -4843,14 +4833,7 @@ msgctxt "#12395"
 msgid "Battery level"
 msgstr ""
 
-#empty strings from id 12396 to 12599
-
-#: xbmc/guilib/WindowIDs.h
-msgctxt "#12600"
-msgid "Weather"
-msgstr ""
-
-#empty strings from id 12601 to 12899
+#empty strings from id 12396 to 12899
 
 #: xbmc/guilib/WindowIDs.h
 msgctxt "#12900"
@@ -11867,9 +11850,7 @@ msgctxt "#24027"
 msgid "Weather"
 msgstr ""
 
-msgctxt "#24028"
-msgid "Weather.com (standard)"
-msgstr ""
+#empty strings with id 24028
 
 #: system/settings/settings.xml
 msgctxt "#24029"
@@ -12508,7 +12489,7 @@ msgctxt "#33049"
 msgid "Alert"
 msgstr ""
 
-#: addons/skin.confluence/720p/weather/MapAlerts.xml
+#: Unknown
 msgctxt "#33050"
 msgid "Alerts"
 msgstr ""
@@ -14500,7 +14481,7 @@ msgstr ""
 #. Description of settings category "Weather -> General -> Locations with label #0
 #: system/settings/settings.xml
 msgctxt "#36317"
-msgid "Select up to three locations for which the weather can be displayed."
+msgid "Select the locations for which the weather can be displayed."
 msgstr ""
 
 #. Description of settings category "Weather -> General -> Service for weather information" with label #24029
