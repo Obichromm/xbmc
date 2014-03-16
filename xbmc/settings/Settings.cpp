@@ -1145,9 +1145,8 @@ void CSettings::InitializeISettingCallbacks()
 #endif
 
   settingSet.clear();
-  settingSet.insert("weather.addon");
-  settingSet.insert("weather.addonsettings");
-  m_settingsManager->RegisterCallback(&g_weatherManager, settingSet);
+  settingSet.insert("weather.service");
+  settingSet.insert("weather.servicesettings");
 
   settingSet.clear();
   settingSet.insert("input.peripherals");

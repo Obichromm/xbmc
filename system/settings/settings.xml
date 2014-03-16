@@ -1982,19 +1982,19 @@
           <default>1</default>
           <control type="spinner" format="string" />
         </setting>
-        <setting id="weather.addon" type="addon" label="24029" help="36318">
+        <setting id="weather.service" type="addon" label="24029" help="36318">
           <level>0</level>
           <default></default>
           <constraints>
-            <addontype>xbmc.python.weather</addontype>
+            <addontype>xbmc.service.weather</addontype>
             <allowempty>true</allowempty>
           </constraints>
           <control type="button" format="addon" />
         </setting>
-        <setting id="weather.addonsettings" type="action" parent="weather.addon" label="21417" help="36419">
+        <setting id="weather.servicesettings" type="action" parent="weather.service" label="21417" help="36419">
           <level>0</level>
           <dependencies>
-            <dependency type="enable" on="property" name="AddonHasSettings" setting="weather.addon" />
+            <dependency type="enable" on="property" name="AddonHasSettings" setting="weather.service" />
           </dependencies>
           <control type="button" format="action" />
         </setting>

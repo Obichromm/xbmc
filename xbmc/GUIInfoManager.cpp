@@ -225,7 +225,7 @@ const infomap player_times[] =   {{ "seektime",         PLAYER_SEEKTIME },
                                   { "finishtime",       PLAYER_FINISH_TIME },
                                   { "starttime",        PLAYER_START_TIME}};
 
-const infomap weather[] =        {{ "plugin",           WEATHER_PLUGIN }};
+const infomap weather[] =        {{ "service",           WEATHER_SERVICE }};
 
 const infomap system_labels[] =  {{ "hasnetwork",       SYSTEM_ETHERNET_LINK_ACTIVE },
                                   { "hasmediadvd",      SYSTEM_MEDIA_DVD },
@@ -1416,8 +1416,8 @@ CStdString CGUIInfoManager::GetLabel(int info, int contextWindow, CStdString *fa
   case PVR_ACTUAL_STREAM_PROVIDER:
     g_PVRManager.TranslateCharInfo(info, strLabel);
     break;
-  case WEATHER_PLUGIN:
-    strLabel = CSettings::Get().GetString("weather.addon");
+  case WEATHER_SERVICE:
+    strLabel = CSettings::Get().GetString("weather.service");
     break;
   case SYSTEM_DATE:
     strLabel = GetDate();

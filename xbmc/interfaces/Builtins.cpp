@@ -584,7 +584,7 @@ int CBuiltins::Execute(const CStdString& execString)
           cmd = StringUtils::Format("RunPlugin(%s)", StringUtils::JoinString(params, ",").c_str());
       }
       else if (CAddonMgr::Get().GetAddon(params[0], addon, ADDON_SCRIPT) ||
-               CAddonMgr::Get().GetAddon(params[0], addon, ADDON_SCRIPT_WEATHER) ||
+               CAddonMgr::Get().GetAddon(params[0], addon, ADDON_SERVICE_WEATHER) ||
                CAddonMgr::Get().GetAddon(params[0], addon, ADDON_SCRIPT_LYRICS))
         // Pass the script name (params[0]) and all the parameters
         // (params[1] ... params[x]) separated by a comma to RunScript

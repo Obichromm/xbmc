@@ -112,7 +112,7 @@ namespace INFO
 #define PLAYER_ISINTERNETSTREAM      54
 #define PLAYER_FILENAME              55
 
-#define WEATHER_PLUGIN              105
+#define WEATHER_SERVICE             105
 
 #define SYSTEM_TEMPERATURE_UNITS    106
 #define SYSTEM_PROGRESS_BAR         107
